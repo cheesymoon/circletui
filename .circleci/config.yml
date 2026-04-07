@@ -1,0 +1,50 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@7.1.0
+
+jobs:
+  build-and-check:
+    executor:
+      name: node/default
+      tag: "22.12"
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Type-check
+          command: npx tsc --noEmit
+      - run:
+          name: Build
+          command: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist
+            - node_modules
+
+  release:
+    executor:
+      name: node/default
+      tag: "22.12"
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Semantic Release
+          command: npx semantic-release
+
+workflows:
+  build-and-release:
+    jobs:
+      - build-and-check
+      - release:
+          requires:
+            - build-and-check
+          filters:
+            branches:
+              only: master
