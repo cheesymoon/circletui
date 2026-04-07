@@ -2,7 +2,7 @@
 
 An interactive terminal UI dashboard for monitoring CircleCI pipelines, built with Node.js, TypeScript, and [Ink](https://github.com/vadimdemedes/ink). Inspired by [btop](https://github.com/aristocratos/btop).
 
-![Node.js](https://img.shields.io/badge/node-%3E%3D22-brightgreen)
+![Node.js](https://img.shields.io/badge/node-%3E%3D22.14-brightgreen)
 ![TypeScript](https://img.shields.io/badge/typescript-5.x-blue)
 
 ## Features
@@ -21,7 +21,7 @@ An interactive terminal UI dashboard for monitoring CircleCI pipelines, built wi
 npx circleci-tui
 ```
 
-That's it. No install needed — just Node.js 22+. On first run, you'll be prompted to enter your [CircleCI API token](https://app.circleci.com/settings/user/tokens) directly in the TUI. The token is saved to `~/.config/circleci-tui/token` so you only need to do this once.
+That's it. No install needed — just Node.js 22.14+. On first run, you'll be prompted to enter your [CircleCI API token](https://app.circleci.com/settings/user/tokens) directly in the TUI. The token is saved to `~/.config/circleci-tui/token` so you only need to do this once.
 
 You can also set the token via environment variable if you prefer:
 
