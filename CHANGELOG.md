@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/cheesymoon/circletui/compare/v1.0.1...v1.0.2) (2026-04-08)
+
+
+### Bug Fixes
+
+* update package name in docs ([643b070](https://github.com/cheesymoon/circletui/commit/643b070165b2d65c63ca14bf9c9cef413cb86a68))
+
 ## [1.0.1](https://github.com/cheesymoon/circletui/compare/v1.0.0...v1.0.1) (2026-04-08)
 
 
