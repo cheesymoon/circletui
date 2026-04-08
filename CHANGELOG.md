@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/cheesymoon/ccitui/compare/v1.0.0...v1.0.1) (2026-04-08)
+
+
+### Bug Fixes
+
+* rename package ([9c8012f](https://github.com/cheesymoon/ccitui/commit/9c8012fda6851fe1d0496e1dabfa0d815aaf6514))
+
 # 1.0.0 (2026-04-08)
 
 
