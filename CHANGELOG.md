@@ -1,20 +1,20 @@
-## [1.0.1](https://github.com/cheesymoon/ccitui/compare/v1.0.0...v1.0.1) (2026-04-08)
+## [1.0.1](https://github.com/cheesymoon/circletui/compare/v1.0.0...v1.0.1) (2026-04-08)
 
 
 ### Bug Fixes
 
-* rename package ([9c8012f](https://github.com/cheesymoon/ccitui/commit/9c8012fda6851fe1d0496e1dabfa0d815aaf6514))
+* rename package ([9c8012f](https://github.com/cheesymoon/circletui/commit/9c8012fda6851fe1d0496e1dabfa0d815aaf6514))
 
 # 1.0.0 (2026-04-08)
 
 
 ### Bug Fixes
 
-* downgrade eslint to v9 ([8c72a41](https://github.com/cheesymoon/ccitui/commit/8c72a4157f86d27bb026abdf6f04fc3ae740e4cd))
-* rename the repo, add cci context ([1cb79c9](https://github.com/cheesymoon/ccitui/commit/1cb79c9e62c653ae8d75fbf8d1736a90b130a165))
-* upgrade node version, use nvm ([649e655](https://github.com/cheesymoon/ccitui/commit/649e65598bde74c57efd9b4b55aac4a1eb855035))
+* downgrade eslint to v9 ([8c72a41](https://github.com/cheesymoon/circletui/commit/8c72a4157f86d27bb026abdf6f04fc3ae740e4cd))
+* rename the repo, add cci context ([1cb79c9](https://github.com/cheesymoon/circletui/commit/1cb79c9e62c653ae8d75fbf8d1736a90b130a165))
+* upgrade node version, use nvm ([649e655](https://github.com/cheesymoon/circletui/commit/649e65598bde74c57efd9b4b55aac4a1eb855035))
 
 
 ### Features
 
-* initial commit ([2aee10c](https://github.com/cheesymoon/ccitui/commit/2aee10c7849585ec7076b83288fe85f51d4810ba))
+* initial commit ([2aee10c](https://github.com/cheesymoon/circletui/commit/2aee10c7849585ec7076b83288fe85f51d4810ba))
