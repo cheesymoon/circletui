@@ -19,7 +19,7 @@ An interactive terminal UI dashboard for monitoring CircleCI pipelines, built wi
 ## Quick start
 
 ```bash
-npx circleci-tui
+npx circletui
 ```
 
 That's it. No install needed — just Node.js 22.14+. On first run, you'll be prompted to enter your [CircleCI API token](https://app.circleci.com/settings/user/tokens) directly in the TUI. The token is saved to `~/.config/circleci-tui/token` so you only need to do this once.
@@ -35,23 +35,23 @@ export CIRCLECI_TOKEN=your_token_here
 ### npx (no install)
 
 ```bash
-npx circleci-tui
+npx circletui
 ```
 
 ### Global install
 
 ```bash
-npm install -g circleci-tui
+npm install -g circletui
 cci
 ```
 
-After installing globally, both `cci` and `circleci-tui` commands are available.
+After installing globally, both `cci` and `circletui` commands are available.
 
 ### From source
 
 ```bash
-git clone https://github.com/your-org/circleci-tui.git
-cd circleci-tui
+git clone https://github.com/cheesymoon/circletui.git
+cd circletui
 npm install
 npm run dev
 ```
@@ -79,6 +79,7 @@ cci --project gh/myorg/myrepo --interval 10
 | `--project` | `-p` | CircleCI project slug | interactive picker |
 | `--branch` | `-b` | Filter pipelines by branch | all branches |
 | `--interval` | `-i` | Polling interval in seconds | `5` |
+| `--clean` | | Clear saved token and projects, start fresh | |
 
 ## Keyboard shortcuts
 
@@ -138,7 +139,7 @@ Browse all your followed CircleCI projects. Type to filter the list. You can als
 ### Dashboard (split-pane)
 
 ```
-╭─ circleci-tui ── gh/org/repo ── main ── ✔12 ✖2 ◌1 ── ↻ 3s ago (5s) ──╮
+╭─ circletui ── gh/org/repo ── main ── ✔12 ✖2 ◌1 ── ↻ 3s ago (5s) ──╮
 ├─ Pipelines (20+) ─────────────┬─ build-and-test ✔ ──────────────────────┤
 │ ▸ #1234 main       2m ago     │  ✔ checkout                        3s  │
 │   #1233 main       15m ago    │  ✔ install-deps                   45s  │
@@ -173,24 +174,23 @@ Full-screen scrollable output of all steps in a job, fetched from the CircleCI A
 
 ## CI/CD
 
-The project uses CircleCI for builds and npm publishing.
+The project uses CircleCI with [semantic-release](https://github.com/semantic-release/semantic-release) for automated versioning and npm publishing.
 
-- **Every push**: type-check + build
-- **Tag push** (`v*`): build + publish to npm
+- **Every push**: lint, type-check, and build
+- **Merge to master**: semantic-release analyzes commits and automatically publishes to npm if warranted
 
-To release a new version:
+Versioning is driven by [Conventional Commits](https://www.conventionalcommits.org/):
 
-```bash
-npm version patch   # or minor / major
-git push --follow-tags
-```
+- `fix:` → patch release
+- `feat:` → minor release
+- `BREAKING CHANGE:` → major release
 
-CircleCI will automatically publish to npm. Requires an `NPM_TOKEN` environment variable set in the CircleCI project settings.
+Requires `NPM_TOKEN` and `GITHUB_TOKEN` environment variables configured in the CircleCI `semantic-release` context.
 
 ## Project structure
 
 ```
-circleci-tui/
+circletui/
 ├── .circleci/
 │   └── config.yml             # CI/CD pipeline
 ├── package.json
@@ -205,10 +205,12 @@ circleci-tui/
     ├── utils.ts                # Shared helpers (timeAgo, statusIcon, etc.)
     ├── hooks/
     │   ├── usePolling.ts       # Generic polling hook
-    │   └── useSpinner.ts       # Braille spinner animation
+    │   ├── useSpinner.ts       # Braille spinner animation
+    │   └── useTerminalSize.ts  # Terminal dimensions hook
     └── components/
         ├── Header.tsx          # Top bar with project/branch/stats
         ├── StatusBar.tsx       # Bottom bar with keybindings
+        ├── TokenInput.tsx      # API token prompt
         ├── ProjectPicker.tsx   # Interactive project selection
         ├── BranchPicker.tsx    # Branch filter selection
         ├── Dashboard.tsx       # Split-pane dashboard (core)

@@ -5,7 +5,8 @@
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
-    "circletui": "./dist/bin/cci.js"
+    "circletui": "dist/bin/circletui.js",
+    "cci": "dist/bin/circletui.js"
   },
   "files": [
     "dist"

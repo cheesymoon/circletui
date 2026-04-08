@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "ink";
 import meow from "meow";
 import { App } from "./App.js";
-import { clearToken } from "./api.js";
+import { clearConfig } from "./api.js";
 
 const cli = meow(
   `
@@ -14,7 +14,7 @@ const cli = meow(
                     If omitted, shows an interactive project picker.
     --branch, -b    Filter pipelines by branch
     --interval, -i  Polling interval in seconds (default: 5)
-    --reset         Clear saved token and start fresh
+    --clean         Clear saved token and projects, start fresh
 
   Examples
     $ cci
@@ -38,7 +38,7 @@ const cli = meow(
         shortFlag: "i",
         default: 5,
       },
-      reset: {
+      clean: {
         type: "boolean",
         default: false,
       },
@@ -46,9 +46,9 @@ const cli = meow(
   }
 );
 
-if (cli.flags.reset) {
-  clearToken();
-  console.log("Token cleared. Run again to set up a new token.");
+if (cli.flags.clean) {
+  clearConfig();
+  console.log("Saved token and projects cleared. Run again to start fresh.");
   process.exit(0);
 }
 

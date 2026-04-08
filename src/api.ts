@@ -44,10 +44,15 @@ export function setToken(token: string): void {
   }
 }
 
-export function clearToken(): void {
+export function clearConfig(): void {
   _token = null;
   try {
     unlinkSync(TOKEN_FILE);
+  } catch {
+    // File may not exist
+  }
+  try {
+    unlinkSync(RECENT_FILE);
   } catch {
     // File may not exist
   }
