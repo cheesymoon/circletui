@@ -1,12 +1,12 @@
 {
-  "name": "circleci-tui",
+  "name": "ccitui",
   "version": "0.0.0-semantically-released",
   "description": "Interactive terminal UI dashboard for CircleCI pipelines",
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
     "cci": "./dist/bin/cci.js",
-    "circleci-tui": "./dist/bin/cci.js"
+    "ccitui": "./dist/bin/cci.js"
   },
   "files": [
     "dist"
