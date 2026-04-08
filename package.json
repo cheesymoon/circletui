@@ -1,6 +1,6 @@
 {
   "name": "circletui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Interactive terminal UI dashboard for CircleCI pipelines",
   "type": "module",
   "main": "dist/src/index.js",

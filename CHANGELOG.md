@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/cheesymoon/circletui/compare/v1.0.2...v1.0.3) (2026-04-08)
+
+
+### Bug Fixes
+
+* rename reset ro clean, update bins ([fe189f5](https://github.com/cheesymoon/circletui/commit/fe189f57a09a7b1a3226cadd80a326660830dd43))
+
 ## [1.0.2](https://github.com/cheesymoon/circletui/compare/v1.0.1...v1.0.2) (2026-04-08)
 
 
