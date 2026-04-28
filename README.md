@@ -138,17 +138,7 @@ Browse all your followed CircleCI projects. Type to filter the list. You can als
 
 ### Dashboard (split-pane)
 
-```
-╭─ circletui ── gh/org/repo ── main ── ✔12 ✖2 ◌1 ── ↻ 3s ago (5s) ──╮
-├─ Pipelines (20+) ─────────────┬─ build-and-test ✔ ──────────────────────┤
-│ ▸ #1234 main       2m ago     │  ✔ checkout                        3s  │
-│   #1233 main       15m ago    │  ✔ install-deps                   45s  │
-│   #1232 feat/x     20m ago    │  ✖ test                         2m 13s │
-│   #1231 main       1h ago     │  ⊘ deploy                              │
-╰───────────────────────────────┴─────────────────────────────────────────╯
- Tab panel · ←→ switch · ↑↓ navigate · PgUp/PgDn page · Enter select · b branch · ...
-
-```
+![circletui dashboard](circletui.png)
 
 Left panel shows pipelines, right panel shows workflows and jobs for the selected pipeline. Active panel is highlighted with a cyan border.
 
